@@ -36,7 +36,7 @@ nav,
 }
 
 nav {
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 50px;
   padding: 15px;
@@ -55,15 +55,15 @@ a {
 }
 
 a:hover {
-  color: red;
-  text-decoration: none;
+  color: grey;
+  text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
   font-size: 2rem;
-  color: red;
+  color: #fff;;
 }
 
 .logo:hover {
@@ -219,7 +219,6 @@ img {
 /* From Uiverse.io by wilsondesouza */ 
 ul {
   list-style: none;
-  margin-top: 30px;
 }
 
 .example-2 {
@@ -314,8 +313,8 @@ ul {
   background-color: #ff0000;
 }
 
+
 .icon {
-  background:white;
   cursor: pointer;
   height: 2rem;
 }
@@ -326,6 +325,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-bottom:30px;
 }
 
 .btn {
@@ -540,9 +540,32 @@ article .icon {
 }
 
 .email-icon {
-  height: 2rem;
+  height: 2.1rem;
   background-color: white;
 }
+
+.Btn {   
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    border: none;
+    right: 10px; 
+    bottom: 10px;   
+}
+
+img.top.arrow {
+    position: absolute;
+    background-color: white;
+    height: 2rem;
+    right: 70px;
+    bottom: 6px;
+    transform: rotate(180deg);
+}
+
 
 /* FOOTER SECTION */
 
