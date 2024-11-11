@@ -52,8 +52,8 @@ nav,
 }
 
 nav {
-    background: black;
-    justify-content: space-evenly;
+    background: #000;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
     padding: 0px 15px;
@@ -76,7 +76,6 @@ a {
 
 a:hover {
   color: grey;
-  text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);
 }
@@ -171,6 +170,163 @@ a:hover {
   transform: none;
 }
 
+/* From Uiverse.io by andrew-demchenk0 */ 
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.moon svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.sun svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #73c0fc;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #73c0fc;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-mode header {
+    border-bottom: 1px solid #444;
+}
+
+.dark-mode p,
+.dark-mode .section__text p,
+.dark-mode p2,
+.dark-mode .logo {
+    color: #000;
+}
+
+.dark-mode nav {
+    color:#fff;
+    background-color:#fff;
+}
+.dark-mode a{
+  color:#555;
+}
+
+.dark-mode a:hover {
+    color: #000;
+}
+
+/* Sun and Moon icon handling */
+#sun-icon {
+    display: block;
+}
+
+#moon-icon {
+    display: none;
+}
+
+/* When dark mode is active, hide the sun and show the moon */
+.dark-mode #sun-icon {
+    display: none;
+}
+
+.dark-mode #moon-icon {
+    display: block;
+}
+
 /* SECTIONS */
 
 section {
@@ -234,9 +390,7 @@ img {
   margin-top: 1rem;
   gap: 1rem;
 }
-
-/* ICONS */
-/* From Uiverse.io by wilsondesouza */ 
+ 
 ul {
   list-style: none;
 }
@@ -246,10 +400,12 @@ ul {
   justify-content: center;
   align-items: center;
 }
+
 .example-2 .icon-content {
   margin: 0 10px;
   position: relative;
 }
+
 .example-2 .icon-content .tooltip {
   position: absolute;
   top: -30px;
@@ -263,11 +419,13 @@ ul {
   font-size: 14px;
   transition: all 0.3s ease;
 }
+
 .example-2 .icon-content:hover .tooltip {
   opacity: 1;
   visibility: visible;
   top: -50px;
 }
+
 .example-2 .icon-content a {
   position: relative;
   overflow: hidden;
@@ -281,18 +439,22 @@ ul {
   background-color: #fff;
   transition: all 0.3s ease-in-out;
 }
+
 .example-2 .icon-content a:hover {
   box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
 }
+
 .example-2 .icon-content a svg {
   position: relative;
   z-index: 1;
   width: 25px;
   height: 25px;
 }
+
 .example-2 .icon-content a:hover {
   color: white;
 }
+
 .example-2 .icon-content a .filled {
   position: absolute;
   top: auto;
@@ -303,6 +465,7 @@ ul {
   background-color: #000;
   transition: all 0.3s ease-in-out;
 }
+
 .example-2 .icon-content a:hover .filled {
   height: 100%;
 }
@@ -316,6 +479,7 @@ ul {
 .example-2 .icon-content a[data-social="github"] ~ .tooltip {
   background-color: #24262a;
 }
+
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
   background: linear-gradient(
@@ -328,6 +492,7 @@ ul {
     #fd1f1f
   );
 }
+
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
   background-color: #ff0000;
